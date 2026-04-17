@@ -1,0 +1,196 @@
+.library {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  transition: background var(--tr-normal);
+}
+
+.library.dragOver {
+  background: #0a1a0a;
+  outline: 2px dashed var(--accent-green);
+  outline-offset: -2px;
+}
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  padding: 4px 10px;
+  outline: none;
+  transition: border-color var(--tr-fast);
+}
+
+.searchInput:focus {
+  border-color: var(--border-active);
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.importBtn {
+  background: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all var(--tr-fast);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.importBtn:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+.trackCount {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ── Track list ── */
+.trackList {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.emptyIcon {
+  font-size: 22px;
+  opacity: 0.3;
+}
+
+/* ── Track row ── */
+.trackRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--tr-fast);
+  min-height: 36px;
+}
+
+.trackRow:hover {
+  background: var(--bg-hover);
+}
+
+.trackRow[data-selected='true'] {
+  background: #0d1f2d;
+  border-left: 2px solid var(--deck-a);
+}
+
+.trackIndex {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  width: 12px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.trackRow[data-selected='true'] .trackIndex {
+  color: var(--deck-a);
+}
+
+.trackMeta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow: hidden;
+}
+
+.trackTitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trackArtist {
+  font-size: 10px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trackStats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.trackBpm {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.trackDur {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  min-width: 34px;
+  text-align: right;
+}
+
+.removeBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--tr-fast), color var(--tr-fast);
+}
+
+.trackRow:hover .removeBtn {
+  opacity: 1;
+}
+
+.removeBtn:hover {
+  color: var(--accent-red);
+}

@@ -1,0 +1,229 @@
+.deck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  padding: 12px 8px;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Accent bar top */
+.deckAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0.8;
+}
+
+.deck[data-playing='true'] .deckAccent {
+  opacity: 1;
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* ── Track info ── */
+.trackInfo {
+  width: 100%;
+  padding: 0 4px;
+  text-align: center;
+}
+
+.trackTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.trackArtist {
+  font-size: 10px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.trackTime {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  margin-top: 4px;
+  color: var(--text-secondary);
+}
+
+.timeCurrent { color: var(--text-primary); }
+.timeSep { opacity: 0.3; }
+
+/* ── BPM ── */
+.bpmDisplay {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.bpmValue {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bpmLabel {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+/* ── Jog mode toggle ── */
+.jogModeBtn {
+  background: transparent;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: all var(--tr-fast);
+}
+
+/* ── Pitch ── */
+.pitchSection {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 0 4px;
+}
+
+.pitchLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.pitchSlider {
+  flex: 1;
+  height: 2px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border-default);
+  border-radius: 1px;
+  outline: none;
+}
+
+.pitchSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+}
+
+.pitchValue {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ── Transport ── */
+.transport {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.btnPlay, .btnCue, .btnStop {
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all var(--tr-fast);
+  color: var(--text-primary);
+}
+
+.btnPlay {
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+}
+
+.btnCue {
+  height: 36px;
+  padding: 0 10px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  border-color: var(--border-default);
+  color: var(--text-secondary);
+}
+
+.btnStop {
+  height: 36px;
+  padding: 0 10px;
+  font-size: 12px;
+  border-color: var(--border-default);
+  color: var(--text-secondary);
+}
+
+.btnCue:hover, .btnStop:hover {
+  border-color: var(--border-active);
+  color: var(--text-primary);
+}
+
+/* ── Hot cues ── */
+.hotCues {
+  display: flex;
+  gap: 4px;
+}
+
+.hotCueBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  transition: all var(--tr-fast);
+}
+
+/* ── Loader ── */
+.loaderRow {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  padding: 0 4px;
+}
+
+.loadBtn {
+  flex: 1;
+  height: 28px;
+  border: 1px solid var(--border-default);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--tr-fast);
+}
+
+.loadBtn:hover:not(:disabled) {
+  border-color: var(--border-active);
+  color: var(--text-primary);
+}
+
+.loadBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

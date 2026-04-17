@@ -1,0 +1,152 @@
+.fxPanel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  padding: 0 16px;
+  overflow: hidden;
+}
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.divider {
+  width: 1px;
+  height: 28px;
+  background: var(--border-subtle);
+  flex-shrink: 0;
+}
+
+/* ── Color FX ── */
+.colorFxSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.colorFxSlot {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.colorFxLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: color 100ms;
+  min-width: 44px;
+}
+
+.colorFxSlider {
+  width: 60px;
+  height: 3px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border-default);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.colorFxSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+}
+
+.colorFxValue {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: right;
+  transition: color 100ms;
+}
+
+/* ── Beat FX ── */
+.beatFxSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.beatFxList {
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.beatFxBtn {
+  height: 22px;
+  padding: 0 6px;
+  border: 1px solid;
+  border-radius: 3px;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 80ms ease;
+  white-space: nowrap;
+}
+
+.beatDivRow {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.beatDivBtn {
+  height: 20px;
+  padding: 0 5px;
+  border: 1px solid;
+  border-radius: 3px;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 80ms ease;
+}
+
+.beatFxControls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.beatOnOff {
+  height: 24px;
+  padding: 0 10px;
+  border: 1px solid;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 80ms ease;
+  flex-shrink: 0;
+}
+
+.beatOnOff:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

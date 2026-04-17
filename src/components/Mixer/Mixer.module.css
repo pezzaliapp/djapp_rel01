@@ -1,0 +1,162 @@
+.mixer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-elevated);
+  padding: 12px 8px;
+  border-left: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  overflow-y: auto;
+}
+
+.mixerTitle {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+/* ── Channel strips ── */
+.channels {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.channelStrip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.channelLabel {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* ── EQ knob ── */
+.eqKnob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.eqLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.eqValue {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  min-width: 28px;
+  text-align: center;
+}
+
+.vertSlider {
+  writing-mode: vertical-lr;
+  direction: rtl;
+  -webkit-appearance: slider-vertical;
+  appearance: auto;
+  width: 24px;
+  height: 70px;
+  cursor: pointer;
+  background: var(--border-default);
+  border-radius: 2px;
+  outline: none;
+}
+
+/* ── Gain fader ── */
+.gainSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.gainLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.vertFader {
+  writing-mode: vertical-lr;
+  direction: rtl;
+  -webkit-appearance: slider-vertical;
+  appearance: auto;
+  width: 20px;
+  height: 80px;
+  cursor: pointer;
+  outline: none;
+}
+
+.gainValue {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  min-width: 28px;
+  text-align: center;
+}
+
+/* ── Crossfader ── */
+.crossfaderSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-top: 8px;
+}
+
+.cfLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.crossfader {
+  flex: 1;
+  height: 3px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    var(--deck-a) 0%,
+    var(--border-active) 50%,
+    var(--deck-b) 100%
+  );
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.crossfader::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 28px;
+  background: var(--text-primary);
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.cfCenter {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-align: center;
+  height: 14px;
+}
